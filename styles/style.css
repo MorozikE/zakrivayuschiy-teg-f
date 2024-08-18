@@ -1,27 +1,9 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
 .page {
   display: grid;
   justify-content: center;
   color: var(--main-text-color, #000);
-  background-color: var(--bg-color, #fff);
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
   font-family: var(--main-font, Inter), sans-serif;
-  font-variation-settings: "wght" var(--main-font, 400);
+  background-color: var(--bg-color, #fff);
   background-image: repeating-linear-gradient(
       to right,
       var(--first-and-second-layer-gradient-color, #d3d3d3) 0 2px,
@@ -38,8 +20,11 @@
     );
   background-size: cover;
   background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--main-font, 400);
 }
-
+/* Стилди шапки */
 .header {
   gap: 25px;
   width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
@@ -52,7 +37,6 @@
   font-family: "PressStart2P";
   font-weight: 400;
   font-size: 14px;
-  font-style: normal;
   line-height: 14px;
   text-transform: uppercase;
   background-color: inherit;
@@ -87,11 +71,11 @@
 }
 
 .theme-menu__button {
-  padding: 0px;
+  position: relative;
   border: none;
+  padding: 0px;
   text-transform: inherit;
   background-color: transparent;
-  position: relative;
   cursor: pointer;
 }
 
@@ -109,8 +93,8 @@
 .theme-menu__button::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -2px;
+  left: 0;
   width: 0;
   height: 2px;
   background-color: var(--main-text-color);
@@ -128,10 +112,10 @@
 
 .theme-menu__button:disabled::before {
   content: "▶";
-  opacity: 0.6;
   position: absolute;
-  inset-inline-start: -20px;
+  opacity: 0.6;
   animation: arrow-anim 0.5s ease-in-out infinite alternate;
+  inset-inline-start: -20px;
 }
 
 @keyframes arrow-anim {
@@ -143,7 +127,7 @@
     transform: translateX(-4px);
   }
 }
-
+/* Стили карточки */
 .card {
   position: relative;
   width: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
@@ -162,33 +146,11 @@
 }
 
 .card__image-container {
-  border-bottom: 2px solid var(--main-text-color);
-  border-top: 2px solid var(--main-text-color);
+  position: relative;
   width: 100%;
   height: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
-  position: relative;
-}
-
-.card__image-watermark {
-  font-family: var(--dendy-font, "PressStart2P");
-  position: absolute;
-  top: 25px;
-  right: 11px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
-  text-shadow: -1px 0 var(--bg-color, #fff), 0 1px var(--bg-color, #fff),
-    1px 0 var(--bg-color, #fff), 0 -1px var(--bg-color, #fff);
-}
-
-@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
-  .card__image-watermark {
-    -webkit-text-stroke: 1px var(--bg-color, #fff);
-    text-stroke: 1px var(--bg-color, #fff);
-    text-shadow: none;
-  }
+  border-block-start: 2px solid var(--main-text-color);
+  border-block-end: 2px solid var(--main-text-color);
 }
 
 .card__image {
@@ -196,6 +158,28 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.card__image-watermark {
+  position: absolute;
+  top: 25px;
+  right: 11px;
+  opacity: 0.5;
+  font-family: var(--dendy-font, "PressStart2P");
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-shadow: -1px 0 var(--bg-color, #fff), 0 1px var(--bg-color, #fff),
+    1px 0 var(--bg-color, #fff), 0 -1px var(--bg-color, #fff);
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .card__image-watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--bg-color, #fff);
+    text-stroke: 1px var(--bg-color, #fff);
+  }
 }
 
 .card__description {
@@ -216,9 +200,9 @@
 
 .card__buttons-container {
   display: flex;
-  gap: 7px;
-  align-items: center;
   justify-content: end;
+  align-items: center;
+  gap: 7px;
   padding: 0 25px 25px 0;
 }
 
@@ -227,25 +211,13 @@
   height: 38px;
 }
 
-.button {
-  border: 2px solid var(--main-text-color, #000);
-  font-family: var(--dendy-font, "PressStart2P");
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 12.6px;
-  background-color: transparent;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-}
-
 .card__like-button:focus {
   outline: none;
 }
 
 .card__like-button:focus-visible {
-  outline: none;
   box-shadow: 2px 2px 0 0 var(--main-text-color);
+  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
@@ -255,10 +227,10 @@
 }
 
 .card__like-button::after {
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
-  content: "";
   display: block;
   width: 100%;
   height: 100%;
@@ -267,21 +239,21 @@
 }
 
 .card__like-button:hover::after {
-  transform: translate(0);
   transition: transform 0.5s ease-in-out;
+  transform: translate(0);
 }
 
 .card__like-button:not(:hover)::after {
-  transform: translate(-100%);
   transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
 }
 
 .card__icon-button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
   width: 38px;
   height: 35px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -392,27 +364,40 @@
   opacity: 0;
 }
 
+.button {
+  position: relative;
+  border: 2px solid var(--main-text-color, #000);
+  overflow: hidden;
+  font-family: var(--dendy-font, "PressStart2P");
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12.6px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Стили футера */
 .footer {
   place-self: center;
 }
 
 .footer__save-button {
-  width: clamp(19.125rem, 18.487rem + 2.72vw, 20.938rem);
-  height: 55px;
-  padding: 15px 0px;
   display: flex;
-  gap: 8px;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+  width: clamp(19.125rem, 18.487rem + 2.72vw, 20.938rem);
+  height: 55px;
   margin-block-end: 102px;
+  padding: 15px 0px;
   background-color: var(--bg-color, #fff);
 }
 
 .footer__save-button::after {
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
-  content: "";
   display: block;
   width: 100%;
   height: 100%;
@@ -421,13 +406,13 @@
 }
 
 .footer__save-button:hover::after {
-  transform: translate(0);
   transition: transform 0.5s ease-in-out;
+  transform: translate(0);
 }
 
 .footer__save-button:not(:hover)::after {
-  transform: translate(-100%);
   transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
 }
 
 .footer__save-button:focus {
@@ -448,22 +433,70 @@
   z-index: 1;
   width: 21px;
   height: 21px;
-  stroke: var(--button-contrast-text-color, #fff);
   color: var(--button-contrast-text-color, #fff);
+  stroke: var(--button-contrast-text-color, #fff);
   mix-blend-mode: difference;
 }
 
 .button__text {
+  position: inherit;
+  z-index: 1;
+  color: var(--button-contrast-text-color, #fff);
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
   line-height: 13px;
-  position: inherit;
-  z-index: 1;
-  color: var(--button-contrast-text-color, #fff);
   mix-blend-mode: difference;
 }
 
+/* Стили модалки */
+.modal {
+  max-width: 357px;
+  padding: 30px;
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--main-text-color, #000);
+}
+
+.modal[open] .modal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.modal[open] .modal__sub-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__floppy_icon {
+  width: 78px;
+  height: 39px;
+  color: var(--main-text-color, #000);
+}
+
+.modal__description {
+  font-family: "PressStart2P";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--main-text-color, #000);
+}
+
+.modal__button {
+  width: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
+  height: 38px;
+  text-transform: uppercase;
+  color: var(--main-text-color, #000);
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+/* Фильтры */
 .filter-blur {
   filter: blur(1rem);
   clip-path: inset(0);
@@ -492,21 +525,17 @@
 .filter-multi {
   filter: contrast(150%) saturate(150%) blur(0.1rem);
   clip-path: inset(0);
-  
 }
 
 @media (width <= 375px) {
   .footer__save-button {
     flex-direction: column;
+    height: 80px;
   }
 
   .floppy_icon {
     width: 28px;
     height: 28px;
-  }
-
-  .footer__save-button {
-    height: 80px;
   }
 }
 
@@ -516,46 +545,4 @@
   .card__image-container {
     width: 100%;
   }
-}
-
-.modal {
-  padding: 30px;
-  max-width: 357px;
-}
-
-.modal[open] .modal__container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  align-items: center;
-}
-
-.modal[open] .modal__sub-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.modal__floppy_icon {
-  width: 78px;
-  height: 39px;
-}
-
-.modal__description {
-  font-family: "PressStart2P";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
-}
-
-.modal__button {
-  width: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
-  height: 38px;
-  text-transform: uppercase;
-}
-
-.modal::backdrop {
-  background-color: rgb(0 0 0 / 0.75);
 }
