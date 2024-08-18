@@ -1,8 +1,8 @@
 @font-face {
   font-display: swap;
   font-family: Inter;
-  src: local(Inter), url(../fonts/Inter-Variable.woff2)  format('woff2');
-  font-weight: 400-785;
+  src: local(Inter), url(../fonts/Inter-Variable.woff2)  format('woff2 supports variations, woff2-variations');
+  font-weight: 400, 785;
 }
 
 @font-face {

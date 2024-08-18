@@ -497,15 +497,12 @@
 @media (width <= 375px) {
   .footer__save-button {
     flex-direction: column;
+    height: 80px;
   }
 
   .floppy_icon {
     width: 28px;
     height: 28px;
-  }
-
-  .footer__save-button {
-    height: 80px;
   }
 }
 
@@ -520,6 +517,8 @@
 .modal {
   max-width: 357px;
   padding: 30px;
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--main-text-color, #000);
 }
 
 .modal[open] .modal__container {
@@ -539,6 +538,7 @@
 .modal__floppy_icon {
   width: 78px;
   height: 39px;
+  color: var(--main-text-color, #000);
 }
 
 .modal__description {
@@ -547,12 +547,14 @@
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
+  color: var(--main-text-color, #000);
 }
 
 .modal__button {
   width: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
   height: 38px;
   text-transform: uppercase;
+  color: var(--main-text-color, #000);
 }
 
 .modal::backdrop {
