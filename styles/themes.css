@@ -4,3 +4,50 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-dark {
+  --bg-color: #000;
+  --main-text-color: #00cc14;
+  --button-contrast-text-color: var(--main-text-color,#00cc14);
+  --title-font-weight: 785;
+  --text-font-weight: 465;
+  --first-and-second-layer-gradient-color: #000;
+  --third-layer-gradient-color-from: #007f0c;
+  --third-layer-gradient-color-to: #004306;
+}
+
+:root.theme-light {
+  --bg-color: #fff;
+  --main-text-color: #000;
+  --button-contrast-text-color: #FFF;
+  --title-font-weight: 700;
+  --text-font-weight: 400;
+  --first-and-second-layer-gradient-color: #d3d3d3;
+  --third-layer-gradient-color-from: #e7e7e7;
+  --third-layer-gradient-color-to: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000;
+    --main-text-color: #00cc14;
+    --button-contrast-text-color: var(--main-text-color,#00cc14);
+    --title-font-weight: 785;
+    --text-font-weight: 465;
+    --first-and-second-layer-gradient-color: #000;
+    --third-layer-gradient-color-from: #007f0c;
+    --third-layer-gradient-color-to: #004306;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff;
+    --main-text-color: #000;
+    --button-contrast-text-color: #FFF;
+    --title-font-weight: 700;
+    --text-font-weight: 400;
+    --first-and-second-layer-gradient-color: #d3d3d3;
+    --third-layer-gradient-color-from: #e7e7e7;
+    --third-layer-gradient-color-to: #1a1a1a;
+  }
+}

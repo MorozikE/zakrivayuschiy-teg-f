@@ -1,1 +1,12 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --bg-color: #FFF;
+  --main-text-color: #000;
+  --button-contrast-text-color: #FFF;
+  --title-font-weight: 700;
+  --text-font-weight: 400;
+  --main-font: Inter;
+  --dendy-font: PressStart2P;
+  --first-and-second-layer-gradient-color: #d3d3d3;
+  --third-layer-gradient-color-from: #e7e7e7;
+  --third-layer-gradient-color-to: #1a1a1a;
+}
