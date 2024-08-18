@@ -17,7 +17,7 @@
   <body class="page">
     <header class="header">
       <h1 class="header__title">
-        <span class="header__title-tag">&lt/HTML&gt</span
+        <span class="header__title-tag">&lt;/HTML&gt;</span
         ><span>закрывающий тег</span>
       </h1>
       <nav class="theme-menu header__theme-menu">
@@ -290,7 +290,7 @@
         <div class="card__image-container">
           <span class="card__image-watermark">care</span>
           <img
-            class="card__image filter-invert" 
+            class="card__image filter-invert"
             src="./images/cards-car.png"
             alt="Пиксельное изображение дома на кколёсах"
           />
@@ -544,9 +544,15 @@
           <svg class="modal__floppy_icon" viewBox="0 0 39 39">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <span class="modal__description">Вставьте дискету, чтобы продолжить</span>
+          <span class="modal__description"
+            >Вставьте дискету, чтобы продолжить</span
+          >
         </div>
-        <button type="button" class="button modal__button" onclick="window['dialog-id'].close()">
+        <button
+          type="button"
+          class="button modal__button"
+          onclick="window['dialog-id'].close()"
+        >
           ок
         </button>
       </div>
