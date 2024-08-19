@@ -32,16 +32,3 @@
     --third-layer-gradient-color-to: #004306;
   }
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: #fff;
-    --main-text-color: #000;
-    --button-contrast-text-color: #FFF;
-    --title-font-weight: 700;
-    --text-font-weight: 400;
-    --first-and-second-layer-gradient-color: #d3d3d3;
-    --third-layer-gradient-color-from: #e7e7e7;
-    --third-layer-gradient-color-to: #1a1a1a;
-  }
-}
