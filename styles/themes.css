@@ -7,6 +7,7 @@
   --first-and-second-layer-gradient-color: #000;
   --third-layer-gradient-color-from: #007f0c;
   --third-layer-gradient-color-to: #004306;
+  --like-btn-border-zero-opacity-color: rgb(0 204 20 / 0);
 }
 
 :root.theme-light {
@@ -18,6 +19,7 @@
   --first-and-second-layer-gradient-color: #d3d3d3;
   --third-layer-gradient-color-from: #e7e7e7;
   --third-layer-gradient-color-to: #1a1a1a;
+  --like-btn-border-zero-opacity-color: rgb(0 0 0 / 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,5 +32,6 @@
     --first-and-second-layer-gradient-color: #000;
     --third-layer-gradient-color-from: #007f0c;
     --third-layer-gradient-color-to: #004306;
+    --like-btn-border-zero-opacity-color: rgb(0 204 20 / 0);
   }
 }

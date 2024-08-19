@@ -243,12 +243,12 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid rgb(0 0 0 / 1);
+  outline: 2px solid var(--main-text-color, #000);
   outline-offset: -0.5px;
 }
 
 .card__icon-button:not(:focus-visible) {
-  outline: 2px solid rgb(0 0 0 / 0);
+  outline: 2px solid var(--like-btn-border-zero-opacity-color, rgb(0 0 0 / 0));
   outline-offset: -0.5px;
 }
 
